@@ -91,16 +91,35 @@ for(const s of document.querySelectorAll('main > section'))observer.observe(s);
 
 // La canción comercial se escucha desde el reproductor oficial de Spotify.
 const music=$('musicToggle');
-const musicDialog=$('musicDialog');
-const spotifyPlayer=$('spotifyPlayer');
-const spotifyUrl='https://open.spotify.com/embed/track/2DbDefRFJ5YOfXCKOeCJJh?theme=0';
+const musicDock=$('musicDock');
+const youtubeMusicPlayer=$('youtubeMusicPlayer');
+// Vídeo musical oficial de KISS OF LIFE. loop + playlist repiten el mismo vídeo.
+// Al abrir el reproductor después del toque de la visitante, intentamos iniciar audio.
+// Algunos navegadores exigen que la visitante pulse ▶ en el video.
+const officialMusicVideo='dCBsFUnyXl0';
+const youtubeMusicUrl='https://www.youtube-nocookie.com/embed/'+officialMusicVideo+
+  '?autoplay=1&loop=1&playlist='+officialMusicVideo+'&playsinline=1&controls=1&rel=0';
+function openMusicDock(){
+  musicDock.hidden=false;
+  musicDock.classList.add('visible');
+  youtubeMusicPlayer.src=youtubeMusicUrl;
+  music.setAttribute('aria-expanded','true');
+  music.setAttribute('aria-label','IGLOO: reproductor abierto');
+  $('musicLabel').textContent='IGLOO ♪';
+}
+function closeMusicDock(){
+  youtubeMusicPlayer.removeAttribute('src');
+  musicDock.classList.remove('visible');
+  musicDock.hidden=true;
+  music.setAttribute('aria-expanded','false');
+  music.setAttribute('aria-label','Reproducir IGLOO mientras navegas');
+  $('musicLabel').textContent='IGLOO';
+}
 music.addEventListener('click',()=>{
-  spotifyPlayer.src=spotifyUrl;
-  if(typeof musicDialog.showModal==='function')musicDialog.showModal();
+  if(musicDock.hidden)openMusicDock();
+  else musicDock.scrollIntoView({behavior:'smooth',block:'nearest'});
 });
-$('closeMusic').addEventListener('click',()=>musicDialog.close());
-musicDialog.addEventListener('click',e=>{if(e.target===musicDialog)musicDialog.close()});
-musicDialog.addEventListener('close',()=>spotifyPlayer.removeAttribute('src'));
+$('closeMusic').addEventListener('click',closeMusicDock);
 
 function wishBurst(){
   const colors=['#dcb6f7','#ffdf9c','#ffc3e9','#b28df0','#ffffff'];
