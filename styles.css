@@ -15,3 +15,37 @@
 @media(max-width:720px){.site-header{height:auto;min-height:100px;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:4px 10px;padding:10px 17px}.brand{min-width:0;font-size:18px}.brand img{width:29px;height:29px}.music-toggle{padding:7px 11px;min-width:92px}.navigation{grid-column:1 / -1;grid-row:2;justify-content:space-between;gap:0;overflow:auto}.nav-link{padding:8px 10px;font-size:12px;white-space:nowrap}.section{scroll-margin-top:105px;padding:75px 22px}.hero{grid-template-columns:1fr;min-height:0;gap:25px;padding-top:66px;padding-bottom:80px}.hero h1{font-size:clamp(57px,13.6vw,88px);white-space:normal}.hero-description{font-size:14px;max-width:580px}.hero-copy{text-align:center}.hero-actions{justify-content:center}.hero-visual{min-height:490px}.hero-photo{width:min(69%,320px)}.little-cat{left:2%;bottom:4%}.hero-circle-stamp{right:6%;bottom:12%}.flower-top{right:6%;top:1%;width:94px}.flower-bottom{left:8%;bottom:7%;width:75px}.scroll-cue{bottom:14px}.section-heading{margin-bottom:37px}.gallery-layout{grid-template-columns:1fr}.carousel-stage{height:min(112vw,465px)}.gallery-side{padding:25px 12px 0}.gallery-side>p{max-width:400px}.gallery-thumbs{max-width:350px;grid-template-columns:repeat(7,1fr)}.envelopes{grid-template-columns:1fr;gap:13px}.note-card{min-height:0}.note-card summary{min-height:190px}.note-illustration{font-size:43px}.special-line{margin-top:48px}.secret-panel{padding:38px 22px}.secret-panel h3{font-size:29px}}
 @media(max-width:430px){.hero h1{font-size:clamp(52px,13vw,70px)}.full-name{font-size:10px;letter-spacing:.09em}.hero-actions{gap:17px}.primary-button{padding:13px 19px;font-size:13px}.quiet-link{font-size:12px}.hero-visual{min-height:400px}.hero-photo{width:72%}.little-cat img{width:56px}.little-cat span{font-size:11px}.hero-circle-stamp{height:62px;width:62px;font-size:22px}.gallery-side>p{font-size:21px}.carousel-footer{align-items:flex-end;padding:15px 5px 6px}.carousel-footer h3{font-size:20px}.carousel-arrows button{width:37px;height:37px}.private-grid{grid-template-columns:1fr}.private-item img{height:300px}.secret-panel{border-radius:20px}.secret-panel h3{font-size:26px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* Edición cumpleaños — acentos violetas, pastel con velitas y un solo gatito extra. */
+:root{--bg:#190b2c;--bg2:#291342;--lav:#e2c7ff;--purple:#b886ef;--card:#321a48}
+body{background:#1b0c2c}
+.ambient{background:radial-gradient(ellipse 72% 62% at 94% 5%,#63359478,transparent 77%),radial-gradient(ellipse 58% 56% at -10% 55%,#6532aa4f,transparent 83%),#1b0c2c}
+.site-header{background:#251238ea}
+.birthday-countdown{border-color:#b38ad655;background:#4c2b6c44;color:#f5e1ff}
+.candles-section{padding-top:96px;padding-bottom:110px}
+.birthday-cake-card{display:grid;grid-template-columns:minmax(260px,1fr) minmax(300px,1.05fr);gap:40px;align-items:center;padding:48px clamp(26px,5vw,70px);border:1px solid #ddaeff66;background:radial-gradient(circle at 18% 25%,#5e308b85,transparent 55%),linear-gradient(130deg,#34204b,#251338);border-radius:27px;box-shadow:0 20px 70px #09031569;overflow:hidden}
+.cake-scene{position:relative;display:flex;min-height:335px;align-items:center;justify-content:center;flex-direction:column;padding-top:28px}
+.cake-star{position:absolute;color:#eac1ff;font-size:30px;filter:drop-shadow(0 0 10px #d8a4fe99);pointer-events:none}
+.cake-star-left{top:29px;left:4%}.cake-star-right{right:0;top:45%}
+.cake-candles{display:flex;gap:18px;justify-content:center;align-items:flex-end;z-index:3}
+.cake-candle{position:relative;width:17px;height:68px;background:repeating-linear-gradient(135deg,#e7c4ff 0 10px,#af78de 10px 18px);border:1px solid #f4dfff99;border-radius:5px 5px 2px 2px;box-shadow:0 0 7px #8b57c54a}
+.cake-flame{position:absolute;left:50%;bottom:calc(100% + 5px);transform:translateX(-50%) rotate(-8deg);width:17px;height:26px;background:radial-gradient(ellipse at 50% 66%,#fff8d1 0 20%,#ffe19b 23% 52%,#ff9b64 70%,#ff9b64 100%);border-radius:70% 18% 67% 24%;box-shadow:0 0 14px 3px #ffcb74a1;animation:purple-flame 1.3s ease-in-out infinite alternate;transition:opacity .55s,transform .55s,filter .55s}
+.cake-candle:nth-child(2) .cake-flame{animation-delay:-.4s}.cake-candle:nth-child(4) .cake-flame{animation-delay:-.8s}
+@keyframes purple-flame{from{transform:translateX(-50%) rotate(-8deg) scale(.95)}to{transform:translateX(-50%) rotate(5deg) scale(1.08)}}
+.cake-frosting{z-index:2;width:min(290px,90%);height:27px;background:#f6ddff;border-radius:50% 50% 14px 14px;box-shadow:inset 0 -7px 0 #d4a2f1}
+.cake-layers{width:min(290px,90%);height:130px;display:grid;place-items:center;background:linear-gradient(180deg,#cf96e5 0 24%,#8341bf 24% 37%,#c59aea 37% 63%,#7b3fae 63% 78%,#af73d7 78%);border-radius:0 0 18px 18px;box-shadow:inset 0 -12px 0 #6d2e9a,0 22px 42px #10061d69}
+.cake-heart{font-family:var(--serif);font-size:65px;line-height:1;color:#f9e7ff;filter:drop-shadow(0 2px 3px #2b0d4666)}
+.cake-plate{width:min(338px,100%);height:15px;margin-top:1px;background:linear-gradient(#f9e5ff,#c09ade);border-radius:50%;box-shadow:0 8px 15px #11091d66}
+.cake-cat{position:absolute;right:-6%;bottom:-5px;width:clamp(110px,11vw,160px);filter:drop-shadow(0 12px 18px #13051b9c);transform:rotate(-9deg);z-index:4}
+.cake-copy h3{font-family:var(--serif);font-size:clamp(27px,3vw,38px);line-height:1.25;font-weight:500;color:#ffebff;margin:17px 0}
+.cake-copy p{color:#e2cce9;font-size:15px;line-height:1.9}
+.cake-copy .wish-button{margin-top:15px}
+.cake-copy .wish-button:disabled{opacity:.9;cursor:default;filter:none;transform:none}
+.candles-out .cake-flame{opacity:0;transform:translate(-50%,-9px) scale(.1);filter:blur(5px);animation:none}
+.cake-copy .wish-reveal{color:#fae7ff;border:1px solid #d8acfb77;background:#794ca94d;border-radius:18px;padding:16px 18px;margin-top:23px}
+.cake-copy .wish-reveal[hidden],.cake-copy .reset-candles[hidden]{display:none}
+.reset-candles{display:inline-block;margin-top:13px}
+@media(max-width:780px){.birthday-cake-card{grid-template-columns:1fr;text-align:center;gap:20px;padding:35px 20px}.cake-scene{min-height:320px}.cake-cat{right:5%;width:120px}.cake-copy h3{font-size:30px}}
+@media(max-width:430px){.cake-candles{gap:13px}.cake-candle{width:15px;height:58px}.cake-layers{height:112px}.cake-cat{right:-6px;width:105px}.cake-copy p{font-size:14px}.candles-section{padding-top:75px;padding-bottom:82px}}
+@media(prefers-reduced-motion:reduce){.cake-flame{animation:none}}
