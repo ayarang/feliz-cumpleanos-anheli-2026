@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211530">
+  <meta name="description" content="Un rincón especial de cumpleaños para Anheli. 31 de octubre.">
+  <meta property="og:title" content="¡Feliz cumpleaños, Anheli! 💜">
+  <meta property="og:description" content="Una pequeña sorpresa para celebrar tu día. ✨">
+  <meta property="og:type" content="website">
+  <title>Feliz cumpleaños, Anheli 💜 | 31 de octubre</title>
+  <link rel="icon" type="image/svg+xml" href="assets/flor.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#inicio">Ir al contenido</a>
+  <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <header class="site-header">
+    <a href="#inicio" class="brand" aria-label="Inicio, para Anheli"><img src="assets/flor.svg" alt=""><span>para <b>Anheli</b><i>✦</i></span></a>
+    <nav class="navigation" aria-label="Menú principal">
+      <a class="nav-link active" href="#inicio">Inicio</a>
+      <a class="nav-link" href="#fotos">Fotos</a>
+      <a class="nav-link" href="#momentos">Momentos</a>
+      <a class="nav-link" href="#secreto"><span aria-hidden="true">♧ </span>Secreto</a>
+    </nav>
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Activar música" aria-pressed="false"><span id="musicIcon">♫</span><span id="musicLabel">Música</span></button>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-sparkles" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="little-star">✦</span> UN DÍA PARA CELEBRAR <span class="little-star">✦</span></span>
+        <h1 id="hero-title">Feliz<br><em>cumpleaños,</em><br><span>Anheli.</span></h1>
+        <p class="full-name">Anheli Alca Gutierrez <span>·</span> 31 de octubre</p>
+        <p class="hero-description">Una pequeña sorpresa para una persona que merece un día lleno de sonrisas, nuevas aventuras y momentos bonitos. 💜</p>
+        <div class="hero-actions"><a href="#fotos" class="primary-button">Descubre tus fotos <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#momentos">Leer unas palabras <span aria-hidden="true">→</span></a></div>
+        <div class="birthday-countdown" id="countdown"><span class="countdown-icon" aria-hidden="true">✧</span><span id="countdownText">El 31 de octubre es tu día especial</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-halo" aria-hidden="true"></div>
+        <div class="polaroid hero-photo"><img src="assets/fotos/portada-anheli.jpg" alt="Fotografía de Anheli sonriendo" fetchpriority="high"><div class="photo-signature">para ti, con cariño <span>♡</span></div></div>
+        <img class="hero-flower flower-top" src="assets/flor.svg" alt="" aria-hidden="true">
+        <img class="hero-flower flower-bottom" src="assets/flor.svg" alt="" aria-hidden="true">
+        <div class="little-cat"><img src="assets/gatito.svg" alt=""><span>miau, feliz cumple ♡</span></div>
+        <div class="hero-circle-stamp" aria-hidden="true">31<br><small>OCT</small></div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true">DESLIZA PARA EXPLORAR <span>↓</span></div>
+    </section>
+
+    <div class="tiny-separator" aria-hidden="true"><span>✦</span><span>♡</span><span>✦</span></div>
+
+    <section class="section photos-section" id="fotos" aria-labelledby="fotos-title">
+      <div class="section-heading"><span class="eyebrow">01 / PARA MIRAR Y SONREÍR</span><h2 id="fotos-title">Pequeñas historias <em>en fotos</em></h2><p>Una galería de instantes. Porque cada foto tiene su propia manera de contarnos algo.</p></div>
+      <div class="gallery-layout">
+        <div class="carousel-card">
+          <div class="carousel-stage" id="carouselStage"><img id="carouselImage" src="assets/fotos/recuerdo-01.jpg" alt="Primer recuerdo de la galería"><button id="expandPhoto" class="expand-photo" type="button" aria-label="Ampliar fotografía">⤢</button><span class="carousel-counter" id="photoCounter">01 / 07</span></div>
+          <div class="carousel-footer"><div><span class="eyebrow tiny">UN PEDACITO DE HISTORIA</span><h3 id="photoTitle">Un instante inesperado</h3><p id="photoDescription">Hay fotos que valen por el momento.</p></div><div class="carousel-arrows"><button id="prevPhoto" type="button" aria-label="Foto anterior">←</button><button id="nextPhoto" type="button" aria-label="Foto siguiente">→</button></div></div>
+        </div>
+        <aside class="gallery-side"><div class="scribble" aria-hidden="true">✿</div><p>“No todas las fotos necesitan una ocasión especial para convertirse en un recuerdo bonito.”</p><div class="gallery-thumbs" id="galleryThumbs" aria-label="Seleccionar una fotografía"></div><small>Desliza, toca las miniaturas o usa las flechas.</small></aside>
+      </div>
+    </section>
+
+    <section class="section moments-section" id="momentos" aria-labelledby="momentos-title">
+      <div class="section-heading"><span class="eyebrow">02 / PALABRAS BONITAS</span><h2 id="momentos-title">Las cosas que <em>importan</em></h2><p>Tres notitas que puedes abrir cuando quieras. Son simples, pero sinceras.</p></div>
+      <div class="envelopes">
+        <details class="note-card"><summary><span class="note-number">NOTA 01</span><span class="note-illustration">✿</span><strong>Por tu sonrisa</strong><span class="note-action">Toca para leer <span aria-hidden="true">↗</span></span></summary><div class="note-inside"><p>Que nunca te falten motivos para sonreír, gente que te acompañe y planes que te ilusionen. Hoy es un buen día para celebrar todo eso.</p><span>♡</span></div></details>
+        <details class="note-card"><summary><span class="note-number">NOTA 02</span><span class="note-illustration">✧</span><strong>Por lo que viene</strong><span class="note-action">Toca para leer <span aria-hidden="true">↗</span></span></summary><div class="note-inside"><p>Que lleguen experiencias nuevas, aprendizajes inesperados y oportunidades bonitas. Todavía hay muchísimas historias por vivir.</p><span>♡</span></div></details>
+        <details class="note-card"><summary><span class="note-number">NOTA 03</span><span class="note-illustration">☾</span><strong>Por ser tú</strong><span class="note-action">Toca para leer <span aria-hidden="true">↗</span></span></summary><div class="note-inside"><p>Ojalá este cumpleaños te recuerde lo valiosa que eres. Sigue creciendo, soñando y encontrando felicidad a tu manera.</p><span>♡</span></div></details>
+      </div>
+      <div class="special-line"><img src="assets/gatito.svg" alt="Dibujo de un gatito morado"><p>Un pequeño deseo: que te pasen cosas tan bonitas que no sepas cuál contar primero.</p><span>— para Anheli 💜</span></div>
+    </section>
+
+    <section class="section secret-section" id="secreto" aria-labelledby="secreto-title">
+      <div class="secret-glow" aria-hidden="true"></div>
+      <div class="section-heading"><span class="eyebrow">03 / UN RINCÓN DIFERENTE</span><h2 id="secreto-title">Solo <em>para ti</em></h2><p>Unas cuantas fotos y palabras se quedaron esperando al otro lado de esta puerta.</p></div>
+      <div class="secret-panel" id="secretPanel"><div class="lock-symbol" aria-hidden="true">♧ <span>✦</span></div><div class="secret-form-wrapper" id="secretFormWrapper"><h3>Una llave, un pequeño secreto</h3><p>Solo tú sabes cómo abrir este rincón. 💜</p><form id="secretForm" novalidate><label for="secretPassword">Tu contraseña especial</label><div class="password-line"><input id="secretPassword" type="password" inputmode="numeric" autocomplete="off" maxlength="24" placeholder="••••••" aria-describedby="secretHint secretError" required><button type="button" class="show-password" id="showPassword" aria-label="Mostrar contraseña" aria-pressed="false">◉</button></div><div class="hint" id="secretHint">Pista: recuerda el acceso a “Chino” de WhatsApp 😉</div><button class="primary-button unlock-button" type="submit" id="unlockButton">Abrir mi sorpresa <span aria-hidden="true">✧</span></button><p id="secretError" class="form-feedback" role="status" aria-live="polite"></p></form></div>
+      <div id="secretUnlocked" class="unlocked-content" hidden><div class="unlock-header"><span>✧ LA PUERTA SE ABRIÓ ✧</span><h3 id="secretContentTitle">Un rincón especial</h3><p id="secretLetter"></p></div><div class="private-grid" id="privateGrid"></div><button type="button" id="lockAgain" class="quiet-button">Cerrar este rinconcito ♡</button></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><img src="assets/flor.svg" alt=""><p>Hecho con cariño para <strong>Anheli Alca Gutierrez</strong></p><span>31 de octubre · Que este día sea muy bonito ✦</span><button type="button" id="confettiButton" aria-label="Lanzar confeti">¡Un deseo más! ✨</button></footer>
+  <audio id="birthdayMusic" src="assets/melodia-violeta.mp3" preload="none" loop></audio>
+  <dialog id="lightbox" class="lightbox" aria-label="Fotografía ampliada"><button type="button" id="closeLightbox" class="lightbox-close" aria-label="Cerrar fotografía">×</button><img id="lightboxImage" alt=""><p id="lightboxCaption"></p></dialog>
+</body>
+</html>
