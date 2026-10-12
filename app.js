@@ -89,17 +89,18 @@ const observer=new IntersectionObserver(entries=>{
 },{rootMargin:'-22% 0px -65% 0px',threshold:0});
 for(const s of document.querySelectorAll('main > section'))observer.observe(s);
 
-const audio=$('birthdayMusic');
-audio.volume=.35;
+// La canción comercial se escucha desde el reproductor oficial de Spotify.
 const music=$('musicToggle');
-music.addEventListener('click',async()=>{
-  if(audio.paused){
-    try{await audio.play();music.setAttribute('aria-pressed','true');$('musicLabel').textContent='Sonando';$('musicIcon').textContent='❚❚';music.setAttribute('aria-label','Pausar música');}
-    catch(err){$('musicLabel').textContent='Sin audio';console.warn('No se pudo iniciar la música',err)}
-  }else{
-    audio.pause();music.setAttribute('aria-pressed','false');$('musicLabel').textContent='Música';$('musicIcon').textContent='♫';music.setAttribute('aria-label','Activar música');
-  }
+const musicDialog=$('musicDialog');
+const spotifyPlayer=$('spotifyPlayer');
+const spotifyUrl='https://open.spotify.com/embed/track/2DbDefRFJ5YOfXCKOeCJJh?theme=0';
+music.addEventListener('click',()=>{
+  spotifyPlayer.src=spotifyUrl;
+  if(typeof musicDialog.showModal==='function')musicDialog.showModal();
 });
+$('closeMusic').addEventListener('click',()=>musicDialog.close());
+musicDialog.addEventListener('click',e=>{if(e.target===musicDialog)musicDialog.close()});
+musicDialog.addEventListener('close',()=>spotifyPlayer.removeAttribute('src'));
 
 function wishBurst(){
   const colors=['#dcb6f7','#ffdf9c','#ffc3e9','#b28df0','#ffffff'];
@@ -114,6 +115,17 @@ function wishBurst(){
   }
 }
 $('confettiButton').addEventListener('click',wishBurst);
+
+const finalSurpriseButton=$('finalSurpriseButton');
+const finalSurpriseReveal=$('finalSurpriseReveal');
+if(finalSurpriseButton && finalSurpriseReveal){
+  finalSurpriseButton.addEventListener('click',()=>{
+    finalSurpriseReveal.hidden=false;
+    finalSurpriseButton.hidden=true;
+    wishBurst();
+    finalSurpriseReveal.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});
+  });
+}
 
 const cakeCard=$('birthdayCakeCard');
 const wishButton=$('wishButton');
