@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261012-3">
-  <script src="app.js?v=20261012-3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261012-4">
+  <script src="app.js?v=20261012-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio">Ir al contenido</a>
@@ -25,6 +25,7 @@
       <a class="nav-link active" href="#inicio">Inicio</a>
       <a class="nav-link" href="#fotos">Fotos</a>
       <a class="nav-link" href="#momentos">Momentos</a>
+      <a class="nav-link" href="#velitas">Velitas</a>
       <a class="nav-link" href="#secreto"><span aria-hidden="true">♧ </span>Secreto</a>
     </nav>
     <button class="music-toggle" id="musicToggle" type="button" aria-label="Activar música" aria-pressed="false"><span id="musicIcon">♫</span><span id="musicLabel">Música</span></button>
@@ -39,7 +40,7 @@
         <p class="full-name">Anheli Alca Gutierrez <span>·</span> 31 de octubre</p>
         <p class="hero-description">Un pequeño gesto de sorpresa en tu día tan especial. Espero que disfrutes de muchas sonrisas, nuevas aventuras y momentos bonitos junto a las personas que te rodean. 💜</p>
         <div class="hero-actions"><a href="#fotos" class="primary-button">Descubre tus fotos <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#momentos">Leer unas palabras <span aria-hidden="true">→</span></a></div>
-        <div class="birthday-countdown" id="countdown"><span class="countdown-icon" aria-hidden="true">✧</span><span id="countdownText">El 31 de octubre es tu día especial</span></div>
+        <div class="birthday-countdown" id="countdown"><span class="countdown-icon" aria-hidden="true">✧</span><span id="countdownText">Que este día te regale sonrisas 💜</span></div>
       </div>
       <div class="hero-visual">
         <div class="hero-halo" aria-hidden="true"></div>
@@ -75,9 +76,42 @@
       <div class="special-line"><img src="assets/gatito.svg" alt="Dibujo de un gatito morado"><p>Un pequeño deseo: que te pasen cosas tan bonitas que no sepas cuál contar primero.</p><span>— para Anheli 💜</span></div>
     </section>
 
+
+    <section class="section candles-section" id="velitas" aria-labelledby="candlesTitle">
+      <div class="section-heading">
+        <span class="eyebrow">03 / UN DESEO ESPECIAL</span>
+        <h2 id="candlesTitle">Sopla tus <em>velitas 🎂</em></h2>
+        <p>Hay días para guardar recuerdos y otros para pedir nuevos deseos. Hoy toca celebrar el tuyo.</p>
+      </div>
+      <div class="birthday-cake-card" id="birthdayCakeCard">
+        <div class="cake-scene" aria-hidden="true">
+          <span class="cake-star cake-star-left">✦</span><span class="cake-star cake-star-right">✧</span>
+          <div class="cake-candles">
+            <div class="cake-candle"><i class="cake-flame"></i></div>
+            <div class="cake-candle"><i class="cake-flame"></i></div>
+            <div class="cake-candle"><i class="cake-flame"></i></div>
+            <div class="cake-candle"><i class="cake-flame"></i></div>
+            <div class="cake-candle"><i class="cake-flame"></i></div>
+          </div>
+          <div class="cake-frosting"></div>
+          <div class="cake-layers"><span class="cake-heart">♡</span></div>
+          <div class="cake-plate"></div>
+          <img class="cake-cat" src="assets/gatito.svg" alt="">
+        </div>
+        <div class="cake-copy">
+          <span class="eyebrow">SOLO UN DESEO Y UN POQUITO DE MAGIA</span>
+          <h3>Una pequeña sorpresa para este día ✨</h3>
+          <p>Estas velitas están encendidas para ti, Anheli. Cuando estés lista, toca el botón y pide algo bonito. No hace falta decirlo en voz alta, jijiji.</p>
+          <button class="primary-button wish-button" id="wishButton" type="button">Pide un deseo ✨</button>
+          <p id="wishReveal" class="wish-reveal" role="status" aria-live="polite" hidden>Que este día te regale sonrisas 💜 Que no te falten ganas de soñar, gente bonita a tu lado ni razones para celebrar. ¡Feliz cumpleaños, Anheli! 🎂</p>
+          <button type="button" class="quiet-button reset-candles" id="resetCandles" hidden>Volver a encender las velitas ↺</button>
+        </div>
+      </div>
+    </section>
+
     <section class="section secret-section" id="secreto" aria-labelledby="secreto-title">
       <div class="secret-glow" aria-hidden="true"></div>
-      <div class="section-heading"><span class="eyebrow">03 / UN RINCÓN DIFERENTE</span><h2 id="secreto-title">Solo <em>para ti</em></h2><p>Unas cuantas fotos y palabras se quedaron esperando al otro lado de esta puerta.</p></div>
+      <div class="section-heading"><span class="eyebrow">04 / UN RINCÓN DIFERENTE</span><h2 id="secreto-title">Solo <em>para ti</em></h2><p>Unas cuantas fotos y palabras se quedaron esperando al otro lado de esta puerta.</p></div>
       <div class="secret-panel" id="secretPanel"><div class="lock-symbol" aria-hidden="true">♧ <span>✦</span></div><div class="secret-form-wrapper" id="secretFormWrapper"><h3>Una llave, un pequeño secreto</h3><p>Solo tú sabes cómo abrir este rincón. 💜</p><form id="secretForm" novalidate><label for="secretPassword">Tu contraseña especial</label><div class="password-line"><input id="secretPassword" type="password" inputmode="numeric" autocomplete="off" maxlength="24" placeholder="••••••" aria-describedby="secretHint secretError" required><button type="button" class="show-password" id="showPassword" aria-label="Mostrar contraseña" aria-pressed="false">◉</button></div><div class="hint" id="secretHint">Pista: recuerda el acceso a “Chino” de WhatsApp 😉</div><button class="primary-button unlock-button" type="submit" id="unlockButton">Abrir mi sorpresa <span aria-hidden="true">✧</span></button><p id="secretError" class="form-feedback" role="status" aria-live="polite"></p></form></div>
       <div id="secretUnlocked" class="unlocked-content" hidden><div class="unlock-header"><span>✧ LA PUERTA SE ABRIÓ ✧</span><h3 id="secretContentTitle">Un rincón especial</h3><p id="secretLetter"></p></div><div class="private-grid" id="privateGrid"></div><aside class="secret-final-letter" id="secretFinalLetter" hidden><span class="eyebrow">✦ UNA ÚLTIMA COSITA ✦</span><h4 id="secretFinalTitle"></h4><p id="secretFinalText"></p></aside><button type="button" id="lockAgain" class="quiet-button">Cerrar este rinconcito ♡</button></div></div>
     </section>
