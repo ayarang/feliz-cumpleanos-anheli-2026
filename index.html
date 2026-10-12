@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js?v=20261012-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261012-3">
+  <script src="app.js?v=20261012-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio">Ir al contenido</a>
@@ -79,7 +79,7 @@
       <div class="secret-glow" aria-hidden="true"></div>
       <div class="section-heading"><span class="eyebrow">03 / UN RINCÓN DIFERENTE</span><h2 id="secreto-title">Solo <em>para ti</em></h2><p>Unas cuantas fotos y palabras se quedaron esperando al otro lado de esta puerta.</p></div>
       <div class="secret-panel" id="secretPanel"><div class="lock-symbol" aria-hidden="true">♧ <span>✦</span></div><div class="secret-form-wrapper" id="secretFormWrapper"><h3>Una llave, un pequeño secreto</h3><p>Solo tú sabes cómo abrir este rincón. 💜</p><form id="secretForm" novalidate><label for="secretPassword">Tu contraseña especial</label><div class="password-line"><input id="secretPassword" type="password" inputmode="numeric" autocomplete="off" maxlength="24" placeholder="••••••" aria-describedby="secretHint secretError" required><button type="button" class="show-password" id="showPassword" aria-label="Mostrar contraseña" aria-pressed="false">◉</button></div><div class="hint" id="secretHint">Pista: recuerda el acceso a “Chino” de WhatsApp 😉</div><button class="primary-button unlock-button" type="submit" id="unlockButton">Abrir mi sorpresa <span aria-hidden="true">✧</span></button><p id="secretError" class="form-feedback" role="status" aria-live="polite"></p></form></div>
-      <div id="secretUnlocked" class="unlocked-content" hidden><div class="unlock-header"><span>✧ LA PUERTA SE ABRIÓ ✧</span><h3 id="secretContentTitle">Un rincón especial</h3><p id="secretLetter"></p></div><div class="private-grid" id="privateGrid"></div><button type="button" id="lockAgain" class="quiet-button">Cerrar este rinconcito ♡</button></div></div>
+      <div id="secretUnlocked" class="unlocked-content" hidden><div class="unlock-header"><span>✧ LA PUERTA SE ABRIÓ ✧</span><h3 id="secretContentTitle">Un rincón especial</h3><p id="secretLetter"></p></div><div class="private-grid" id="privateGrid"></div><aside class="secret-final-letter" id="secretFinalLetter" hidden><span class="eyebrow">✦ UNA ÚLTIMA COSITA ✦</span><h4 id="secretFinalTitle"></h4><p id="secretFinalText"></p></aside><button type="button" id="lockAgain" class="quiet-button">Cerrar este rinconcito ♡</button></div></div>
     </section>
   </main>
 
