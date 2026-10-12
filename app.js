@@ -79,7 +79,7 @@ function birthdayMessage(){
   const days=Math.round((target-today)/86400000);
   return days===1?'¡Falta 1 día para tu cumpleaños! ✨':`Faltan ${days} días para el 31 de octubre ✨`;
 }
-$('countdownText').textContent=birthdayMessage();
+$('countdownText').textContent='Que este día te regale sonrisas 💜';
 
 const navLinks=[...document.querySelectorAll('.nav-link')];
 const observer=new IntersectionObserver(entries=>{
@@ -114,6 +114,30 @@ function wishBurst(){
   }
 }
 $('confettiButton').addEventListener('click',wishBurst);
+
+const cakeCard=$('birthdayCakeCard');
+const wishButton=$('wishButton');
+const wishReveal=$('wishReveal');
+const resetCandles=$('resetCandles');
+if(cakeCard && wishButton && wishReveal && resetCandles){
+  wishButton.addEventListener('click',()=>{
+    cakeCard.classList.add('candles-out');
+    wishReveal.hidden=false;
+    resetCandles.hidden=false;
+    wishButton.disabled=true;
+    wishButton.textContent='¡Deseo pedido! 💜';
+    wishBurst();
+  });
+  resetCandles.addEventListener('click',()=>{
+    cakeCard.classList.remove('candles-out');
+    wishReveal.hidden=true;
+    resetCandles.hidden=true;
+    wishButton.disabled=false;
+    wishButton.textContent='Pide un deseo ✨';
+  });
+}
+
+
 
 // Derivación de clave en el navegador. La clave NO está incluida en código HTML, JS ni texto.
 async function decryptPrivateAlbum(password){
