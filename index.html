@@ -13,12 +13,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261012-6">
-  <script src="app.js?v=20261012-6" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261023-1">
+  <script src="app.js?v=20261023-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio">Ir al contenido</a>
   <div class="ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <div id="giftIntro" class="gift-intro" role="dialog" aria-modal="true" aria-labelledby="giftIntroTitle">
+    <div class="gift-stars" aria-hidden="true">✦ <span>✧</span> ✦</div>
+    <div class="gift-intro-content">
+      <span class="eyebrow">UNA SORPRESA ESPECIAL · 31 DE OCTUBRE</span>
+      <h2 id="giftIntroTitle">Anheli, hay algo <em>para ti</em> 💜</h2>
+      <p>Un pequeño detalle hecho para regalarte una sonrisa. ¿Lo abrimos? Jijiji.</p>
+      <div class="gift-illustration" aria-hidden="true">
+        <span class="gift-light"></span>
+        <span class="gift-lid"><i></i></span>
+        <span class="gift-box"><i></i><b>♡</b></span>
+        <span class="gift-shadow"></span>
+      </div>
+      <button id="openBirthdayGift" class="primary-button gift-open-button" type="button">Abrir mi regalo <span aria-hidden="true">✦</span></button>
+      <button id="skipGiftIntro" class="gift-skip-button" type="button">Entrar sin animación</button>
+      <span class="gift-hint">Hecho con cariño, flores y un poquito de morado ✿</span>
+    </div>
+  </div>
   <header class="site-header">
     <a href="#inicio" class="brand" aria-label="Inicio, para Anheli"><img src="assets/flor.svg" alt=""><span>para <b>Anheli</b><i>✦</i></span></a>
     <nav class="navigation" aria-label="Menú principal">
@@ -36,7 +54,7 @@
       <div class="hero-sparkles" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
       <div class="hero-copy">
         <span class="eyebrow"><span class="little-star">✦</span> UN DÍA PARA CELEBRAR <span class="little-star">✦</span></span>
-        <h1 id="hero-title">Feliz<br><em>cumpleaños,</em><br><span>Anheli.</span></h1>
+        <h1 id="hero-title" tabindex="-1">Feliz<br><em>cumpleaños,</em><br><span>Anheli.</span></h1>
         <p class="full-name">Anheli Alca Gutierrez <span>·</span> 31 de octubre</p>
         <p class="hero-description">Un pequeño gesto de sorpresa en tu día tan especial. Espero que disfrutes de muchas sonrisas, nuevas aventuras y momentos bonitos junto a las personas que te rodean. 💜</p>
         <div class="hero-actions"><a href="#fotos" class="primary-button">Descubre tus fotos <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#momentos">Leer unas palabras <span aria-hidden="true">→</span></a></div>
@@ -47,7 +65,10 @@
         <div class="polaroid hero-photo"><img src="assets/fotos/portada-anheli.jpg" alt="Fotografía de Anheli sonriendo" fetchpriority="high"><div class="photo-signature">para ti, con cariño <span>♡</span></div></div>
         <img class="hero-flower flower-top" src="assets/flor.svg" alt="" aria-hidden="true">
         <img class="hero-flower flower-bottom" src="assets/flor.svg" alt="" aria-hidden="true">
-        <div class="little-cat"><img src="assets/gatito.svg" alt=""><span>miau, feliz cumple ♡</span></div>
+        <button class="little-cat cat-interactive" id="birthdayCat" type="button" aria-label="Toca al gatito morado para escuchar una ocurrencia">
+  <img src="assets/gatito.svg" alt="">
+  <span id="birthdayCatMessage" aria-live="polite">miau, feliz cumple ♡</span>
+</button>
         <div class="hero-circle-stamp" aria-hidden="true">31<br><small>OCT</small></div>
       </div>
       <div class="scroll-cue" aria-hidden="true">DESLIZA PARA EXPLORAR <span>↓</span></div>
@@ -123,6 +144,7 @@
         <p>Ya viste las fotos, las notas y las velitas. Pero todavía queda una cosita, jijiji.</p>
         <button class="primary-button" id="finalSurpriseButton" type="button">Abrir última sorpresa ✦</button>
         <div class="last-surprise-reveal" id="finalSurpriseReveal" role="status" aria-live="polite" hidden>
+          <div class="final-floral-decoration" aria-hidden="true"><span>✿</span><span>❀</span><span>✿</span></div>
           <span class="finale-heart" aria-hidden="true">💜</span>
           <h3>¡Feliz cumpleaños, Anheli!</h3>
           <p>Espero que este pequeño detalle te haya sacado una sonrisa. Que no te falten buenos momentos, nuevas aventuras ni personas con quienes compartirlas. ¡Que tengas un 31 de octubre muy bonito, jijiji! ✨</p>
@@ -136,12 +158,15 @@
   <aside id="musicDock" class="music-dock" aria-labelledby="musicDockTitle" hidden>
   <div class="music-dock-head">
     <div><span class="music-dock-kicker">♫ REPRODUCIENDO EN ESTA PÁGINA</span><strong id="musicDockTitle">IGLOO · KISS OF LIFE</strong></div>
-    <button id="closeMusic" type="button" aria-label="Cerrar y detener música" title="Cerrar reproductor">×</button>
+    <div class="music-dock-actions">
+      <button id="moveMusicDock" type="button" aria-label="Mover el reproductor al otro lado" title="Cambiar de lado">⇄</button>
+      <button id="closeMusic" type="button" aria-label="Cerrar y detener música" title="Cerrar reproductor">×</button>
+    </div>
   </div>
   <iframe id="youtubeMusicPlayer" title="IGLOO de KISS OF LIFE — video oficial del canal" width="266" height="200"
     allow="autoplay; encrypted-media; picture-in-picture; fullscreen" loading="lazy"
     referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  <p class="music-dock-help">Si no comienza sola, toca ▶ en el video. Seguirá sonando mientras lees y se repetirá.</p>
+  <p class="music-dock-help">Toca ▶ para escuchar IGLOO mientras lees. ⇄ lo cambia de lado.</p>
 </aside>
   <dialog id="lightbox" class="lightbox" aria-label="Fotografía ampliada"><button type="button" id="closeLightbox" class="lightbox-close" aria-label="Cerrar fotografía">×</button><img id="lightboxImage" alt=""><p id="lightboxCaption"></p></dialog>
 </body>
