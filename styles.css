@@ -213,3 +213,11 @@ body.gift-intro-active{overflow:hidden}
 .gift-opening .gift-box,.cat-interactive.cat-bounce img{animation:none!important}
 .gift-lid,.cat-interactive img{transition:none!important}
 }
+
+/* Ajustes finales: mensaje de reproducción claro y legible en celulares */
+.gift-hint{max-width:340px;margin:11px auto 0;line-height:1.55}
+.music-dock-help{line-height:1.5}
+@media(max-width:430px){
+  .gift-hint{max-width:260px;font-size:12px}
+  .music-dock-help{font-size:10px}
+}
