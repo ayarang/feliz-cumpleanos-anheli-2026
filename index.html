@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261023-1">
-  <script src="app.js?v=20261023-1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261024-1">
+  <script src="app.js?v=20261024-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio">Ir al contenido</a>
@@ -32,9 +32,9 @@
         <span class="gift-box"><i></i><b>♡</b></span>
         <span class="gift-shadow"></span>
       </div>
-      <button id="openBirthdayGift" class="primary-button gift-open-button" type="button">Abrir mi regalo <span aria-hidden="true">✦</span></button>
+      <button id="openBirthdayGift" class="primary-button gift-open-button" type="button">Abrir mi regalo <span aria-hidden="true">♫</span></button>
       <button id="skipGiftIntro" class="gift-skip-button" type="button">Entrar sin animación</button>
-      <span class="gift-hint">Hecho con cariño, flores y un poquito de morado ✿</span>
+      <span class="gift-hint">Al abrir, intentaremos poner IGLOO de fondo. Si no suena, toca ▶ en el reproductor. ♫</span>
     </div>
   </div>
   <header class="site-header">
@@ -157,16 +157,15 @@
   <footer class="site-footer"><img src="assets/flor.svg" alt=""><p>Hecho con cariño para <strong>Anheli Alca Gutierrez</strong></p><span>31 de octubre · Que este día sea muy bonito ✦</span><button type="button" id="confettiButton" aria-label="Lanzar confeti">¡Un deseo más! ✨</button></footer>
   <aside id="musicDock" class="music-dock" aria-labelledby="musicDockTitle" hidden>
   <div class="music-dock-head">
-    <div><span class="music-dock-kicker">♫ REPRODUCIENDO EN ESTA PÁGINA</span><strong id="musicDockTitle">IGLOO · KISS OF LIFE</strong></div>
+    <div><span class="music-dock-kicker">♫ MÚSICA PARA ESTA SORPRESA</span><strong id="musicDockTitle">IGLOO · KISS OF LIFE</strong></div>
     <div class="music-dock-actions">
       <button id="moveMusicDock" type="button" aria-label="Mover el reproductor al otro lado" title="Cambiar de lado">⇄</button>
       <button id="closeMusic" type="button" aria-label="Cerrar y detener música" title="Cerrar reproductor">×</button>
     </div>
   </div>
   <iframe id="youtubeMusicPlayer" title="IGLOO de KISS OF LIFE — video oficial del canal" width="266" height="200"
-    allow="autoplay; encrypted-media; picture-in-picture; fullscreen" loading="lazy"
-    referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  <p class="music-dock-help">Toca ▶ para escuchar IGLOO mientras lees. ⇄ lo cambia de lado.</p>
+    allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <p class="music-dock-help">Intentamos reproducirla al abrir el regalo. Si tu navegador lo bloquea, pulsa ▶ aquí. ⇄ mueve el video.</p>
 </aside>
   <dialog id="lightbox" class="lightbox" aria-label="Fotografía ampliada"><button type="button" id="closeLightbox" class="lightbox-close" aria-label="Cerrar fotografía">×</button><img id="lightboxImage" alt=""><p id="lightboxCaption"></p></dialog>
 </body>
