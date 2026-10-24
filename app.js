@@ -14,7 +14,7 @@ const publicPhotos = [
 
 const $ = id => document.getElementById(id);
 
-// Una presentación que se abre como un regalo. Sin audio automático.
+// Una presentación que se abre como un regalo. Intento de música en el primer toque.
 const giftIntro=$('giftIntro');
 const openBirthdayGift=$('openBirthdayGift');
 const skipGiftIntro=$('skipGiftIntro');
@@ -40,7 +40,12 @@ if(giftIntro && openBirthdayGift && skipGiftIntro){
       $('hero-title').focus({preventScroll:true});
     }
   }
-  openBirthdayGift.addEventListener('click',()=>finishGiftIntro(true));
+  openBirthdayGift.addEventListener('click',()=>{
+    // Se ejecuta directamente durante el toque para maximizar la posibilidad de autoplay con sonido.
+    // Sin garantías: YouTube o el navegador aún pueden exigir pulsar ▶.
+    openMusicDock();
+    finishGiftIntro(true);
+  });
   skipGiftIntro.addEventListener('click',()=>finishGiftIntro(false));
   giftIntro.addEventListener('keydown',e=>{
     if(e.key==='Escape'){e.preventDefault();finishGiftIntro(false)}
