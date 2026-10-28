@@ -1,0 +1,17 @@
+/* Luna creciente y atardecer violeta detrás del retrato; independiente del CSS base. */
+.hero-visual{isolation:isolate}
+.twilight-scene{position:absolute;inset:8% -3% 3%;z-index:1;pointer-events:none;overflow:visible}
+.twilight-scene::before{content:"";position:absolute;inset:6% 0 0;background:radial-gradient(ellipse 47% 32% at 61% 71%,#e69cba4d 0%,#a067cb4c 43%,transparent 100%),radial-gradient(ellipse 64% 46% at 59% 58%,#67409042 0%,transparent 100%);filter:blur(15px);border-radius:50%}
+.twilight-scene::after{content:"";position:absolute;left:11%;right:0;bottom:13%;height:2px;background:linear-gradient(90deg,transparent,#e5acd04d,transparent);filter:blur(1px)}
+.twilight-moon{position:absolute;top:26%;right:2%;width:119px;height:119px;border-radius:50%;background:radial-gradient(circle at 37% 32%,#fff9ff,#f1d9ff 58%,#c79de9);box-shadow:0 0 22px #f4d9ffb8,0 0 63px #d09deb79,0 0 100px #b873d24d;transform:rotate(-14deg);animation:twilight-moon-float 7s ease-in-out infinite alternate}
+.twilight-moon::after{content:"";position:absolute;top:-14px;right:-25px;width:110px;height:109px;border-radius:50%;background:#352047;box-shadow:inset 7px -5px 9px #502b6859}
+.twilight-star{position:absolute;color:#f8e6ff;text-shadow:0 0 10px #f5ddff,0 0 23px #bd8ce8;font-family:Georgia,serif;animation:twilight-star-twinkle 3.5s ease-in-out infinite alternate}
+.twilight-star-one{right:4%;top:18%;font-size:24px}
+.twilight-star-two{right:27%;top:12%;font-size:17px;animation-delay:-1.4s}
+.twilight-star-three{right:0;top:64%;font-size:18px;animation-delay:-2.1s}
+.twilight-star-four{left:14%;top:33%;font-size:12px;animation-delay:-.7s}
+@keyframes twilight-moon-float{from{transform:translateY(-5px) rotate(-14deg)}to{transform:translateY(9px) rotate(-9deg)}}
+@keyframes twilight-star-twinkle{from{opacity:.4;transform:scale(.8)}to{opacity:1;transform:scale(1.16)}}
+@media(max-width:720px){.twilight-scene{inset:5% 0 2%}.twilight-moon{right:0;top:23%;width:94px;height:94px}.twilight-moon::after{top:-12px;right:-20px;width:88px;height:90px}.twilight-star-one{right:3%;top:12%}.twilight-star-two{right:29%;top:8%}}
+@media(max-width:390px){.twilight-moon{right:-2%;width:78px;height:78px;top:26%}.twilight-moon::after{width:74px;height:75px;top:-9px;right:-17px}.twilight-star-one{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.twilight-moon,.twilight-star{animation:none!important}}
