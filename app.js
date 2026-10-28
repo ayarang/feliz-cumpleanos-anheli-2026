@@ -5,7 +5,7 @@
  * Funciones separadas por responsabilidad para facilitar cambios futuros.
  * Los módulos conservan sus propios datos, eventos y dependencias.
  */
-import './assets/js/gallery.js';
+import './assets/js/gallery.js?v=20261028-1';
 import './assets/js/presentation.js';
 import './assets/js/celebration.js';
 import './assets/js/secret.js';
