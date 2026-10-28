@@ -1,0 +1,44 @@
+/* Album de recuerdos - apariencia scrapbook de lavanda.
+   Este módulo solo afecta a la galería pública; no toca el área secreta. */
+
+.photos-section{position:relative;isolation:isolate}
+.photos-section::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 44% 46% at 4% 27%,#754c9a38,transparent 78%),radial-gradient(ellipse 41% 48% at 95% 71%,#bb72c52a,transparent 77%)}
+.photos-section .section-heading{position:relative}
+.photos-section .section-heading::after{content:"✧   ✿   ✧";display:block;margin:10px auto 0;text-align:center;letter-spacing:10px;color:#d6a6f0ad;font-size:17px}
+.gallery-layout{gap:clamp(18px,3.2vw,43px);align-items:center}
+.carousel-card{position:relative;isolation:isolate;padding:clamp(12px,1.6vw,19px);border-radius:27px;background:linear-gradient(145deg,#513366,#372246 53%,#281831);border:1px solid #e9bdff69;box-shadow:0 22px 68px #09031480,0 0 36px #a46bc417;overflow:visible}
+.carousel-card::before,.carousel-card::after{content:"";position:absolute;top:-11px;left:7%;z-index:4;width:75px;height:23px;border:1px solid #fef5ff55;background:repeating-linear-gradient(95deg,#f8dcff80 0 13px,#e7c9f46b 13px 26px);box-shadow:0 3px 8px #10071c38;transform:rotate(-15deg);pointer-events:none;backdrop-filter:blur(2px)}
+.carousel-card::after{left:auto;right:9%;transform:rotate(12deg);width:66px}
+.album-ribbon{position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:1px 7px 12px;color:#efd9ff;text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:700}
+.album-ribbon .album-page-mark{font-family:var(--serif);font-size:14px;letter-spacing:.03em;text-transform:none;font-style:italic;color:#ddbbfa}
+.album-photo-wrap{position:relative;border-radius:15px;padding:8px;background:linear-gradient(135deg,#ead0f2,#f4e5fa 37%,#c398dc 100%);box-shadow:inset 0 0 0 1px #fff8,0 11px 32px #170c2466}
+.carousel-stage{height:clamp(330px,42vw,505px);border-radius:9px;background:radial-gradient(ellipse at 60% 30%,#503966,#1e152a 72%);box-shadow:inset 0 0 0 1px #fff2,inset 0 0 32px #12071d5c;overflow:hidden}
+.carousel-stage>img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 4px 12px #0003)}
+.carousel-stage.album-appear>img{animation:album-page-arrive .42s cubic-bezier(.2,.8,.3,1) both}
+@keyframes album-page-arrive{from{opacity:.45;transform:scale(.975)}to{opacity:1;transform:scale(1)}}
+.carousel-counter{bottom:14px;left:14px;background:#281737d9;border:1px solid #efd0fc66;backdrop-filter:blur(6px);box-shadow:0 6px 14px #0c05174d;font-weight:700;letter-spacing:.13em;color:#ffe9ff}
+.expand-photo{z-index:3}
+.album-edge-flower{position:absolute;z-index:3;right:-13px;bottom:-14px;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:radial-gradient(circle,#f5d7ff 0 26%,#b98adb 27% 67%,#73449b 68%);color:#fff5ff;font-size:27px;text-shadow:0 2px 4px #693b8b;border:3px solid #f8d8ff80;box-shadow:0 12px 22px #180a2466;transform:rotate(14deg);pointer-events:none}
+.carousel-footer{align-items:flex-start;padding:24px 11px 11px;gap:22px}
+.carousel-footer>div:first-child{min-width:0}
+.carousel-footer h3{color:#fff1fb;font-size:clamp(25px,2.4vw,31px);margin:7px 0 9px}
+.carousel-footer p{max-width:560px;font-size:14px;line-height:1.85;color:#e2c8e7;text-wrap:pretty}
+.carousel-arrows{align-self:flex-start;padding-top:22px}
+.carousel-arrows button{width:45px;height:45px;border-color:#d3adeb8a;background:#6a4785;transition:transform .2s,background .2s}
+.carousel-arrows button:hover{transform:translateY(-3px);background:#9465ae}
+.album-progress-row{display:flex;align-items:center;gap:13px;padding:4px 11px 10px;color:#ddc0ed;font-size:11px;letter-spacing:.07em}
+.album-progress-row>span{flex-shrink:0}
+.album-progress{position:relative;flex:1;height:5px;overflow:hidden;border-radius:999px;background:#e8ceff2c;box-shadow:inset 0 1px 3px #17072366}
+.album-progress-fill{height:100%;width:14.2857%;border-radius:999px;background:linear-gradient(90deg,#c38be8,#f5d9ff);box-shadow:0 0 10px #d5a2ee9c;transition:width .35s ease}
+.gallery-side{background:linear-gradient(180deg,#432b565b,#3b254853);border:1px solid #cb9de82f;border-radius:23px;padding:26px 18px;box-shadow:0 18px 50px #11061b2a}
+.gallery-side .scribble{color:#e9c2f9;filter:drop-shadow(0 0 10px #af7acf83)}
+.gallery-side>p{font-size:clamp(20px,2.1vw,25px);max-width:340px}
+.gallery-thumbs{gap:8px;max-width:310px}
+.thumb{position:relative;border:2px solid #b79ac247;border-radius:10px;opacity:.72;box-shadow:0 5px 15px #10061955;transition:opacity .22s,transform .22s,border-color .22s,box-shadow .22s}
+.thumb.active{border-color:#f4dbff;box-shadow:0 0 0 2px #c18fe5,0 9px 19px #10061970;transform:translateY(-3px) rotate(-2deg)}
+.thumb:focus-visible{outline:3px solid #f5d8ff;outline-offset:3px}
+.gallery-side small{display:block;line-height:1.5}
+@media(max-width:950px){.gallery-layout{grid-template-columns:minmax(0,1.4fr) minmax(215px,.7fr);gap:16px}.gallery-side{padding:22px 12px}.gallery-thumbs{gap:6px}}
+@media(max-width:720px){.gallery-layout{grid-template-columns:minmax(0,1fr)}.carousel-card{padding:11px;border-radius:22px}.carousel-card::before{left:8%;width:56px}.carousel-card::after{right:8%;width:56px}.album-ribbon{font-size:9px;padding:1px 6px 10px}.album-photo-wrap{padding:6px}.carousel-stage{height:min(108vw,465px)}.carousel-footer{padding:20px 8px 12px;gap:10px}.carousel-footer h3{font-size:25px}.carousel-footer p{font-size:15px;line-height:1.75}.carousel-arrows{padding-top:8px}.album-progress-row{padding:6px 8px 8px}.album-edge-flower{width:45px;height:45px;right:-11px;bottom:-10px;font-size:22px}.gallery-side{padding:19px 14px 24px;margin-top:6px}.gallery-side>p{font-size:20px;margin-bottom:19px}.gallery-thumbs{max-width:420px;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}.thumb{border-radius:8px}}
+@media(max-width:390px){.carousel-footer{flex-wrap:wrap}.carousel-arrows{width:100%;display:flex;justify-content:flex-end;padding-top:0}.album-ribbon{letter-spacing:.09em}.album-progress-row{font-size:10px}.gallery-thumbs{gap:4px}.gallery-side{padding:15px 10px 20px}}
+@media(prefers-reduced-motion:reduce){.carousel-stage.album-appear>img{animation:none}.album-progress-fill,.thumb,.carousel-arrows button{transition:none}}
