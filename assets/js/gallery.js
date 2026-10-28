@@ -11,6 +11,13 @@ function showPhoto(index){
   const image=$('carouselImage');
   image.src=p.src;
   image.alt=p.title;
+  // Transición suave por página sin recortar ni sustituir la fotografía original.
+  stage.classList.remove('album-appear');
+  void stage.offsetWidth;
+  stage.classList.add('album-appear');
+  $('albumPageLabel').textContent=`Página ${currentPhoto+1} de ${publicPhotos.length}`;
+  $('albumProgress').setAttribute('aria-valuenow',String(currentPhoto+1));
+  $('albumProgressFill').style.width=`${(currentPhoto+1)*100/publicPhotos.length}%`;
   $('photoTitle').textContent=p.title;
   $('photoDescription').textContent=p.description;
   $('photoCounter').textContent=`${String(currentPhoto+1).padStart(2,'0')} / 07`;
