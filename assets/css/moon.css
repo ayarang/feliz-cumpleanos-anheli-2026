@@ -63,13 +63,15 @@
 /* Luna creciente, más grande y más arriba. */
 .twilight-moon {
   position: absolute;
-  top: 8%;
-  right: 0%;
-  width: 152px;
-  height: 152px;
+  top: 5%;
+  right: -1%;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle at 38% 34%,
-    #fffefe 0%, #f7e6ff 45%, #d7b0ef 75%, #bb8fe1 100%);
+  background:
+    radial-gradient(circle at 30% 36%, rgba(198,156,226,.17) 0 6px, transparent 7px),
+    radial-gradient(circle at 51% 64%, rgba(185,146,217,.11) 0 10px, transparent 11px),
+    radial-gradient(circle at 38% 34%, #fffefe 0%, #f7e6ff 45%, #d7b0ef 75%, #bb8fe1 100%);
   box-shadow:
     0 0 22px rgba(255, 232, 251, 0.85),
     0 0 56px rgba(219, 170, 246, 0.55),
@@ -83,12 +85,19 @@
   position: absolute;
   top: -14px;
   right: -28px;
-  width: 136px;
-  height: 136px;
+  width: 144px;
+  height: 144px;
   border-radius: 50%;
   background: #332044;
   box-shadow: inset 8px -8px 14px rgba(86, 50, 111, 0.45);
 }
+
+/* Resplandor de la luna y nubes delicadas detrás del retrato. */
+.twilight-moon::before{content:"";position:absolute;inset:-16%;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(245,212,255,.20),rgba(188,122,228,.09) 47%,transparent 74%);filter:blur(6px)}
+.twilight-cloud{position:absolute;z-index:0;display:block;width:48%;height:70px;border-radius:55%;opacity:.48;filter:blur(11px);background:radial-gradient(ellipse 44% 55% at 25% 58%,rgba(255,212,239,.29),transparent 95%),radial-gradient(ellipse 50% 70% at 65% 48%,rgba(195,127,228,.22),transparent 100%),linear-gradient(90deg,transparent,rgba(229,165,233,.13),transparent);animation:twilight-cloud-drift 12s ease-in-out infinite alternate}
+.twilight-cloud-one{right:15%;bottom:28%;transform:rotate(-7deg)}
+.twilight-cloud-two{left:3%;bottom:18%;width:39%;opacity:.30;animation-duration:15s;animation-delay:-5s}
+@keyframes twilight-cloud-drift{from{translate:-7px 0}to{translate:9px -4px}}
 
 /* Cuatro estrellas brillantes que acompañan a la luna. */
 .twilight-star {
@@ -119,16 +128,19 @@
 /* Adaptación para celulares: no tapar rostro ni gatito. */
 @media (max-width: 720px) {
   .twilight-scene { inset: -8% -10% 0%; }
+  .twilight-cloud { height: 48px; filter: blur(10px); }
+  .twilight-cloud-one { bottom: 23%; }
+  .twilight-cloud-two { bottom: 14%; }
 
   .twilight-moon {
-    top: 6%;
+    top: 4%;
     right: -3%;
-    width: 126px;
-    height: 126px;
+    width: 130px;
+    height: 130px;
   }
   .twilight-moon::after {
-    width: 112px;
-    height: 112px;
+    width: 116px;
+    height: 116px;
     top: -11px;
     right: -24px;
   }
@@ -139,14 +151,14 @@
 
 @media (max-width: 390px) {
   .twilight-moon {
-    top: 9%;
+    top: 7%;
     right: -6%;
-    width: 108px;
-    height: 108px;
+    width: 112px;
+    height: 112px;
   }
   .twilight-moon::after {
-    width: 96px;
-    height: 96px;
+    width: 100px;
+    height: 100px;
     top: -10px;
     right: -20px;
   }
@@ -156,5 +168,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .twilight-moon, .twilight-star { animation: none !important; }
+  .twilight-moon, .twilight-star, .twilight-cloud { animation: none !important; }
 }
