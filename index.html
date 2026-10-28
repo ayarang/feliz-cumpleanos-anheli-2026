@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="styles.css?v=20261028-1">
   <link rel="stylesheet" href="assets/css/experience.css?v=20261028-1">
   <link rel="stylesheet" href="assets/css/moon.css?v=20261028-3">
-  <script type="module" src="app.js?v=20261028-1"></script>
+  <link rel="stylesheet" href="assets/css/album.css?v=20261028-1">
+  <script type="module" src="app.js?v=20261028-2"></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio">Ir al contenido</a>
@@ -91,8 +92,19 @@
       <div class="section-heading"><span class="eyebrow">01 / PARA MIRAR Y SONREÍR</span><h2 id="fotos-title">Pequeñas historias <em>en fotos</em></h2><p>Una galería de instantes. Porque cada foto tiene su propia manera de contarnos algo.</p></div>
       <div class="gallery-layout">
         <div class="carousel-card">
+          <div class="album-ribbon" aria-hidden="true"><span>✦ ÁLBUM DE RECUERDOS</span><span class="album-page-mark">para Anheli ♡</span></div>
+          <div class="album-photo-wrap">
           <div class="carousel-stage" id="carouselStage"><img id="carouselImage" src="assets/fotos/recuerdo-01.jpg" alt="Primer recuerdo de la galería"><button id="expandPhoto" class="expand-photo" type="button" aria-label="Ampliar fotografía">⤢</button><span class="carousel-counter" id="photoCounter">01 / 07</span></div>
+          </div>
+          <div class="album-edge-flower" aria-hidden="true">✿</div>
           <div class="carousel-footer"><div><span class="eyebrow tiny">UN PEDACITO DE HISTORIA</span><h3 id="photoTitle">Un instante inesperado</h3><p id="photoDescription">Tu cabello es hermoso, aunque siempre dices que no te gusta porque se engrasa. La verdad, aquí se te ve muy bien, jijiji. ¡Espero que hayas encontrado el shampoo perfecto!</p></div><div class="carousel-arrows"><button id="prevPhoto" type="button" aria-label="Foto anterior">←</button><button id="nextPhoto" type="button" aria-label="Foto siguiente">→</button></div></div>
+          <div class="album-progress-row">
+            <span id="albumPageLabel">Página 1 de 7</span>
+            <div class="album-progress" id="albumProgress" role="progressbar" aria-label="Página actual del álbum" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1">
+              <div class="album-progress-fill" id="albumProgressFill"></div>
+            </div>
+            <span aria-hidden="true">✧</span>
+          </div>
         </div>
         <aside class="gallery-side"><div class="scribble" aria-hidden="true">✿</div><p>“No todas las fotos necesitan una ocasión especial para convertirse en un recuerdo bonito.”</p><div class="gallery-thumbs" id="galleryThumbs" aria-label="Seleccionar una fotografía"></div><small>Desliza, toca las miniaturas o usa las flechas.</small></aside>
       </div>
